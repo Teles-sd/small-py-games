@@ -4,16 +4,16 @@ BLACKJACK - projeto 2
 
 # REQUISITOS
 
-# - Um jogador Vs Dealer automatizado
-# - Player pode esperar ou pedir mais cartas
-# - Player pode escolher o valor de apostas
-# - Acompanhar o dinheiro total dos jogadores
-# - Alertar o jogador de vitórias e perdas
+# OK - Um jogador Vs Dealer automatizado
+# OK - Player pode esperar ou pedir mais cartas
+# OK - Player pode escolher o valor de apostas
+# OK - Acompanhar o dinheiro total dos jogadores
+# OK - Alertar o jogador de vitórias e perdas
 
-# - Usar POO 
+# OK - Usar POO 
 
-# - Tentar vários jogadores
-# - Tentar implementar Double-down
+# OK - Tentar vários jogadores
+# OK - Tentar implementar Double-down
 
 
 
@@ -358,7 +358,7 @@ def whoPlays():
 
 def newPlayer(player):
 	
-	with open('/home/teles/Coding/python/Projects/blackjack/blackjack_profiles/%s.pkl' %player.filename,'wb') as output:
+	with open('/home/teles/Coding/python/Projects/blackjack/blackjack_profiles/%s.pkl' %player.filename,'xb') as output:
 		pickle.dump(player, output, pickle.HIGHEST_PROTOCOL)
 
 
@@ -371,7 +371,9 @@ def loadPlayer(filename):
 
 
 def savePlayer(player):
-	newPlayer(player)
+	
+	with open('/home/teles/Coding/python/Projects/blackjack/blackjack_profiles/%s.pkl' %player.filename,'wb') as output:
+		pickle.dump(player, output, pickle.HIGHEST_PROTOCOL)
 
 
 
